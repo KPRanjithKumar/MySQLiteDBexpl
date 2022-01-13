@@ -2,6 +2,7 @@ package ran.am.mysqlitedbexpl;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -36,4 +37,20 @@ public class DbHplr extends SQLiteOpenHelper {
 
     }
 
+    public String retrvloc(String sna2) {
+
+        Cursor c;
+        c= sqLiteDatabase.query("students",null,"Name=?",new String[]{sna2},
+                null,null,null);
+
+        c.moveToFirst();
+
+        if(c.getCount()<1){
+            return "not exist";
+        }
+
+        String v= c.getString(c.getColumnIndex("Location"));
+
+        return v;
+    }
 }

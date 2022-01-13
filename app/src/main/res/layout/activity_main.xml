@@ -29,4 +29,19 @@
         android:layout_height="wrap_content"
         android:onClick="savetodb"
         android:text="save" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/idname"
+        android:hint="type name"
+        android:layout_height="wrap_content"></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:text="retrive loc"
+        android:onClick="retr"
+        android:layout_height="wrap_content"></Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv"
+        android:layout_height="wrap_content"></TextView>
 </LinearLayout>
